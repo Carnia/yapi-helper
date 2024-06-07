@@ -1,0 +1,36 @@
+{
+  "name": "get-schema-by-api",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "postinstall": "mkdir dist && cp public/* dist/",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "bundle-jstt": "browserify -r json-schema-to-typescript -s jstt -o src/ContentPage/utils/jstt.js"
+  },
+  "dependencies": {
+    "@babel/standalone": "^7.24.6",
+    "axios": "^1.7.2",
+    "eval5": "^1.4.7",
+    "json-schema-to-typescript": "^14.0.5",
+    "vue": "^3.3.8",
+    "vue-m-message": "^4.0.2"
+  },
+  "devDependencies": {
+    "@crxjs/vite-plugin": "2.0.0-beta.23",
+    "@esbuild-plugins/node-globals-polyfill": "^0.2.3",
+    "@types/chrome": "^0.0.254",
+    "@types/node": "^20.14.1",
+    "@vitejs/plugin-vue": "^4.5.0",
+    "browserify": "^17.0.0",
+    "browserify-shim": "^3.8.16",
+    "less": "^4.2.0",
+    "path-browserify": "^1.0.1",
+    "typescript": "^5.2.2",
+    "url-polyfill": "^1.1.12",
+    "vite": "^5.0.0",
+    "vue-tsc": "^1.8.22"
+  }
+}
