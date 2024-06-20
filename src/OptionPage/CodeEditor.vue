@@ -57,17 +57,10 @@ const deleteSnippet = (i: number) => {
           <div>代码段</div>
           <div>操作</div>
         </div>
-        <div class="item-wrapper" v-for="(item, i) in codeSnippetArray" :key="item.name + i">
-          <template v-if="item.immutable">
-            <input type="text" :value="item.name" disabled>
-            <textarea :value="item.value" disabled></textarea>
-            <button @click="deleteSnippet(i)">删除</button>
-          </template>
-          <template v-else>
-            <input type="text" v-model="item.name" :maxLength="15">
-            <textarea v-model="item.value" :maxLength="2000"></textarea>
-            <button @click="deleteSnippet(i)">删除</button>
-          </template>
+        <div class="item-wrapper" v-for="(item, i) in codeSnippetArray" :key="item.id">
+          <input type="text" :value="item.name" :disabled="item.immutable">
+          <textarea :value="item.value" :disabled="item.immutable" :maxLength="2000"></textarea>
+          <button @click="deleteSnippet(i)">删除</button>
         </div>
       </div>
     </div>
